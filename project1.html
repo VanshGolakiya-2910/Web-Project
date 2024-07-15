@@ -4,420 +4,782 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script
-        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-    <link rel="stylesheet" href="css/project1.css">
+    <title>Bizland CSS Templeate</title>
     <link rel="stylesheet" href="css/all.min.css">
-
-    <!-- font family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/project1.css">
+    <script
+    src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
 </head>
 
 <body>
-    <header class="flex decoration-white w-full uil-bg-xenon-900 ">
-        <div class="w-full hidden lg:block mx-auto">
-            <div class="lg:border-b-2 lg:border-solid uil-border-grey-700 py-4 mx-auto px-4">
-                <div class="flex max-w-1440 items-center justify-around w-full grid grid-cols-2 mx-auto">
-                    <div class="w-auto flex items-center ">
-                        <div class="flex items-center gap-x-2 ">
-                            <h4 class="uil-text-xenon-400">News :</h4>
-                            <p>Algolia named a leader in Gartner&#174 Magic Quadrant&#8482</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-x-2 justify-end">
-                        <div class="border-r border-solid uil-border-grey-700"><a href="" class="px-4">Company</a></div>
-                        <div class="border-r border-solid uil-border-grey-700"><a href="" class="px-4">Support</a></div>
-                        <div class="border-r border-solid uil-border-grey-700">
-                            <div class="flex gap-x-2 justify-center items-center px-4"><i
-                                    class="fa-solid fa-user"></i><a href="">Login</a></div>
-                        </div>
-                        <div class="">
-                            <div class="flex gap-x-2 justify-center items-center px-4"><i
-                                    class="fa-solid fa-globe"></i><a href="">Eng</a><i
-                                    class="fa-solid fa-chevron-down"></i></div>
-                        </div>
-                    </div>
+    <!-- topbar heading start -->
+    <div class="tb-100">
+        <div class="tb-1320">
+            <div class="topbar">
+                <div class="tb-50">
+                    <div><i class="fa-regular fa-envelope" style="color: #fcfcfc;"></i> <a
+                            href="">contact@example.com</a></div>
+                    <div><i class="fa-solid fa-mobile-button" style="color: #ffffff;"></i> +1 5589 55488 55</div>
                 </div>
-            </div>
-            <div class="w-full lg:border-b-2 lg:border-solid uil-border-grey-700 py-6 px-4">
-                <div class="flex max-w-1440  items-center justify-between  mx-auto flex-shrink ">
-                    <div class="flex z-50 lg:flex  header-logo items-center w-auto">
-                        <a class="block h-6 max-w-200   " href="/doc/">
-                            <svg class="w-110 hidden xl:block" height="25" viewBox="0 0 2197 501" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>Algolia logo white</title>
-                                <path fill-rule="evenodd" clip-rule="evenodd" class="hidden xl:block"
-                                    d="M1070.38 275.47V6.08c0-3.63-3.24-6.39-6.82-5.83l-50.46 7.94a5.912 5.912 0 0 0-4.99 5.84l.17 273.22c0 12.92 0 92.7 95.97 95.49 3.33.1 6.09-2.58 6.09-5.91v-40.78c0-2.96-2.19-5.51-5.12-5.84-34.85-4.01-34.85-47.57-34.85-54.72l.01-.02Z"
-                                    fill="#fff"></path>
-                                <path class="hidden xl:block"
-                                    d="M1902.56 104.9h-50.78a5.9 5.9 0 0 0-5.9 5.9v266.1c0 3.259 2.64 5.9 5.9 5.9h50.78c3.25 0 5.9-2.641 5.9-5.9V110.8c0-3.258-2.65-5.9-5.9-5.9Z"
-                                    fill="#fff"></path>
-                                <path fill-rule="evenodd" clip-rule="evenodd" class="hidden xl:block"
-                                    d="M1851.78 71.55h50.77c3.26 0 5.9-2.64 5.9-5.9V6.07c0-3.62-3.24-6.39-6.82-5.83l-50.77 7.95a5.902 5.902 0 0 0-4.99 5.83v51.62c0 3.26 2.64 5.9 5.9 5.9l.01.01ZM1764.03 275.47V6.08c0-3.63-3.24-6.39-6.82-5.83l-50.46 7.94a5.912 5.912 0 0 0-4.99 5.84l.17 273.22c0 12.92 0 92.7 95.97 95.49 3.33.1 6.09-2.58 6.09-5.91v-40.78c0-2.96-2.19-5.51-5.12-5.84-34.85-4.01-34.85-47.57-34.85-54.72l.01-.02ZM1631.95 142.89c-11.14-12.25-24.83-21.65-40.78-28.31-15.92-6.53-33.26-9.85-52.07-9.85-18.78 0-36.15 3.17-51.92 9.85-15.59 6.66-29.29 16.05-40.76 28.31-11.47 12.23-20.38 26.87-26.76 44.03-6.38 17.17-9.24 37.37-9.24 58.36 0 20.99 3.19 36.87 9.55 54.21 6.38 17.32 15.14 32.11 26.45 44.36 11.29 12.23 24.83 21.62 40.6 28.46 15.77 6.83 40.12 10.33 52.4 10.48 12.25 0 36.78-3.82 52.7-10.48 15.92-6.68 29.46-16.23 40.78-28.46 11.29-12.25 20.05-27.04 26.25-44.36 6.22-17.34 9.24-33.22 9.24-54.21 0-20.99-3.34-41.19-10.03-58.36-6.38-17.17-15.14-31.8-26.43-44.03h.02Zm-44.43 163.75c-11.47 15.75-27.56 23.7-48.09 23.7-20.55 0-36.63-7.8-48.1-23.7-11.47-15.75-17.21-34.01-17.21-61.2 0-26.89 5.59-49.14 17.06-64.87 11.45-15.75 27.54-23.52 48.07-23.52 20.55 0 36.63 7.78 48.09 23.52 11.47 15.57 17.36 37.98 17.36 64.87 0 27.19-5.72 45.3-17.19 61.2h.01ZM894.416 104.9h-49.33c-48.36 0-90.91 25.48-115.75 64.1-14.52 22.58-22.99 49.63-22.99 78.73 0 44.89 20.13 84.92 51.59 111.1 2.93 2.6 6.05 4.98 9.31 7.14 12.86 8.49 28.11 13.47 44.52 13.47 1.23 0 2.46-.03 3.68-.09.36-.02.71-.05 1.07-.07.87-.05 1.75-.11 2.62-.2.34-.03.68-.08 1.02-.12.91-.1 1.82-.21 2.73-.34.21-.03.42-.07.63-.1 32.89-5.07 61.56-30.82 70.9-62.81v57.83c0 3.26 2.64 5.9 5.9 5.9h50.42c3.26 0 5.9-2.64 5.9-5.9V110.8c0-3.26-2.64-5.9-5.9-5.9h-56.32Zm0 206.92c-12.2 10.16-27.97 13.98-44.84 15.12-.16.01-.33.03-.49.04-1.12.07-2.24.1-3.36.1-42.24 0-77.12-35.89-77.12-79.37 0-10.25 1.96-20.01 5.42-28.98 11.22-29.12 38.77-49.74 71.06-49.74h49.33v142.83ZM2133.97 104.9h-49.33c-48.36 0-90.91 25.48-115.75 64.1-14.52 22.58-22.99 49.63-22.99 78.73 0 44.89 20.13 84.92 51.59 111.1 2.93 2.6 6.05 4.98 9.31 7.14 12.86 8.49 28.11 13.47 44.52 13.47 1.23 0 2.46-.03 3.68-.09.36-.02.71-.05 1.07-.07.87-.05 1.75-.11 2.62-.2.34-.03.68-.08 1.02-.12.91-.1 1.82-.21 2.73-.34.21-.03.42-.07.63-.1 32.89-5.07 61.56-30.82 70.9-62.81v57.83c0 3.26 2.64 5.9 5.9 5.9h50.42c3.26 0 5.9-2.64 5.9-5.9V110.8c0-3.26-2.64-5.9-5.9-5.9h-56.32Zm0 206.92c-12.2 10.16-27.97 13.98-44.84 15.12-.16.01-.33.03-.49.04-1.12.07-2.24.1-3.36.1-42.24 0-77.12-35.89-77.12-79.37 0-10.25 1.96-20.01 5.42-28.98 11.22-29.12 38.77-49.74 71.06-49.74h49.33v142.83ZM1314.05 104.9h-49.33c-48.36 0-90.91 25.48-115.75 64.1-11.79 18.34-19.6 39.64-22.11 62.59a148.518 148.518 0 0 0 .05 32.73c4.28 38.09 23.14 71.61 50.66 94.52 2.93 2.6 6.05 4.98 9.31 7.14 12.86 8.49 28.11 13.47 44.52 13.47 17.99 0 34.61-5.93 48.16-15.97 16.29-11.58 28.88-28.54 34.48-47.75v50.26h-.11v11.08c0 21.84-5.71 38.27-17.34 49.36-11.61 11.08-31.04 16.63-58.25 16.63-11.12 0-28.79-.59-46.6-2.41-2.83-.29-5.46 1.5-6.27 4.22l-12.78 43.11c-1.02 3.46 1.27 7.02 4.83 7.53 21.52 3.08 42.52 4.68 54.65 4.68 48.91 0 85.16-10.75 108.89-32.21 21.48-19.41 33.15-48.89 35.2-88.52V110.8c0-3.26-2.64-5.9-5.9-5.9h-56.32.01Zm0 64.1s.65 139.13 0 143.36c-12.08 9.77-27.11 13.59-43.49 14.7-.16.01-.33.03-.49.04-1.12.07-2.24.1-3.36.1-1.32 0-2.63-.03-3.94-.1-40.41-2.11-74.52-37.26-74.52-79.38 0-10.25 1.96-20.01 5.42-28.98 11.22-29.12 38.77-49.74 71.06-49.74h49.33-.01Z"
-                                    fill="#fff"></path>
-                                <path
-                                    d="M249.826.17C113.296.17 1.996 110.25.026 246.32c-2 138.19 110.12 252.7 248.33 253.5 42.68.25 83.79-10.19 120.3-30.03 3.56-1.93 4.11-6.83 1.08-9.51l-23.38-20.72c-4.75-4.21-11.51-5.4-17.36-2.92-25.48 10.84-53.17 16.38-81.71 16.03-111.68-1.37-201.91-94.29-200.13-205.96 1.76-110.26 92-199.41 202.67-199.41h202.69v360.28l-115-102.18c-3.72-3.31-9.42-2.66-12.42 1.31-18.46 24.44-48.53 39.64-81.93 37.34-46.33-3.2-83.87-40.5-87.34-86.81-4.15-55.24 39.63-101.52 94-101.52 49.18 0 89.68 37.85 93.91 85.95.38 4.28 2.31 8.27 5.52 11.12l29.95 26.55c3.4 3.01 8.79 1.17 9.63-3.3 2.16-11.55 2.92-23.58 2.07-35.92-4.82-70.34-61.8-126.93-132.17-131.26-80.68-4.97-148.13 58.14-150.27 137.25-2.09 77.1 61.08 143.56 138.19 145.26 32.19.71 62.03-9.41 86.14-26.95l150.26 133.2c6.44 5.71 16.61 1.14 16.61-7.47V9.65c0-5.24-4.24-9.48-9.48-9.48h-240.36Z"
-                                    fill="#fff"></path>
-                            </svg>
-                            <svg class="block xl:hidden uil-h-24 uil-w-24" width="501" height="501"
-                                viewBox="0 0 501 501" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <title>Algolia mark white</title>
-                                <path
-                                    d="M250.926 0C114.306 0 2.926 110.16.956 246.32c-2 138.29 110.19 252.87 248.49 253.67 42.71.25 83.85-10.2 120.38-30.05 3.56-1.93 4.11-6.83 1.08-9.52l-23.39-20.74c-4.75-4.22-11.52-5.41-17.37-2.92-25.5 10.85-53.21 16.39-81.76 16.04-111.75-1.37-202.04-94.35-200.26-206.1 1.76-110.33 92.06-199.55 202.8-199.55h202.83v360.53l-115.08-102.25c-3.72-3.31-9.43-2.66-12.43 1.31-18.47 24.46-48.56 39.67-81.98 37.36-46.36-3.2-83.92-40.52-87.4-86.86-4.15-55.28 39.65-101.58 94.07-101.58 49.21 0 89.74 37.88 93.97 86.01.38 4.28 2.31 8.28 5.53 11.13l29.97 26.57c3.4 3.01 8.8 1.17 9.63-3.3 2.16-11.55 2.92-23.6 2.07-35.95-4.83-70.39-61.84-127.01-132.26-131.35-80.73-4.98-148.23 58.18-150.37 137.35-2.09 77.15 61.12 143.66 138.28 145.36 32.21.71 62.07-9.42 86.2-26.97l150.36 133.29c6.45 5.71 16.62 1.14 16.62-7.48V9.49c0-5.24-4.25-9.49-9.49-9.49H250.926Z"
-                                    fill="#fff"></path>
-                            </svg>
-
-                        </a>
-                    </div>
-                    <div class="flex uppercase z-50 hg-72 justify-between items-center px-4 ">
-                        <div class="mx-6 flex-shrink-0 sm:py-8 py-4">
-                            <ul class="flex gap-4  items-center lg:flex-hidden normal-case">
-                                <li><a href="" class="h-full ">Solutions</a>
-                                </li>
-                                <li><a href="" class="">Industries</a></li>
-                                <li><a href="" class="">Pricing</a></li>
-                                <li><a href="" class="">Developers</a></li>
-                                <li><a href="" class="">Resources</a></li>
-                                <li></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="flex">
-                        <div
-                            class="button rounded-lg max-w-448 w-full min-w-0  search-box flex flex-grow-0 flex-shrink trucnate nav-search-pd border-2 border-solid uil-border-grey-700 nav-xl-pd lg:nav-search-pd mr-4">
-                            <button class=""><a href="" class="flex gap-3 items-center "><i
-                                        class="fa-solid fa-magnifying-glass uil-text-xenon-400 "></i>
-                                    <p class="hidden xl:block">Search the documentation</p>
-                                </a></button>
-                        </div>
-                    </div>
-                    <div class="flex gap-x-3">
-                        <div
-                            class="button rounded-lg w-full w-auto search-box flex justify-center trucnate p-4 border-2 border-solid ">
-                            <button class=""><a href="" class="flex gap-3 items-center">
-                                    <p>Request Demo</p>
-                                </a></button>
-                        </div>
-                        <div
-                            class="button rounded-lg w-full w-auto search-box flex flex-grow-0 flex-shrink trucnate nav-demo-pd decoration-white backgrond-start">
-                            <button class=""><a href="" class="flex gap-3 items-center">
-                                    <p>Get Started</p>
-                                </a></button>
-                        </div>
-                    </div>
+                <div class="tb-50" style="justify-content: flex-end;">
+                    <a href=""><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a>
                 </div>
-
             </div>
         </div>
+    </div>
+    </div>
+    </div>
+    <!-- topbar heading over -->
 
-        <!-- LESS THAN 1024 -->
-        <div class="block lg:hidden  w-full">
-            <div class="flex justify-between items-center px-12 py-6">
-                <div class="flex gap-x-3 ">
-                    <div>
-                        <svg class="uil-block uil-h-24 uil-w-24 lg:uil-hidden" width="501" height="501"
-                            viewBox="0 0 501 501" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <title>Algolia mark white</title>
-                            <path
-                                d="M250.926 0C114.306 0 2.926 110.16.956 246.32c-2 138.29 110.19 252.87 248.49 253.67 42.71.25 83.85-10.2 120.38-30.05 3.56-1.93 4.11-6.83 1.08-9.52l-23.39-20.74c-4.75-4.22-11.52-5.41-17.37-2.92-25.5 10.85-53.21 16.39-81.76 16.04-111.75-1.37-202.04-94.35-200.26-206.1 1.76-110.33 92.06-199.55 202.8-199.55h202.83v360.53l-115.08-102.25c-3.72-3.31-9.43-2.66-12.43 1.31-18.47 24.46-48.56 39.67-81.98 37.36-46.36-3.2-83.92-40.52-87.4-86.86-4.15-55.28 39.65-101.58 94.07-101.58 49.21 0 89.74 37.88 93.97 86.01.38 4.28 2.31 8.28 5.53 11.13l29.97 26.57c3.4 3.01 8.8 1.17 9.63-3.3 2.16-11.55 2.92-23.6 2.07-35.95-4.83-70.39-61.84-127.01-132.26-131.35-80.73-4.98-148.23 58.18-150.37 137.35-2.09 77.15 61.12 143.66 138.28 145.36 32.21.71 62.07-9.42 86.2-26.97l150.36 133.29c6.45 5.71 16.62 1.14 16.62-7.48V9.49c0-5.24-4.25-9.49-9.49-9.49H250.926Z"
-                                fill="#fff"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                    <div>
-                        <a href="">MENU</a>
-                    </div>
+    <!-- navigation bar start -->
+    <header>
+        <div class="w-100">
+            <div class="w-1320">
+                <div class="w-30">
+                    <h1 class="logo">
+                        <a href="">BizLand</a> <span style="color:#106eea">.</span>
+                    </h1>
                 </div>
-                <div class="flex">
-                    <div
-                        class="button rounded-lg max-w-448 w-full min-w-0  search-box flex flex-grow-0 flex-shrink trucnate nav-search-pd border-2 border-solid uil-border-grey-700 nav-xl-pd lg:nav-search-pd">
-                        <button class=""><a href="" class="flex gap-3 items-center  "><i
-                                    class="fa-solid fa-magnifying-glass uil-text-xenon-400 "></i>
-                                <p class="hidden xl:block">Search the documentation</p>
-                            </a></button>
-                    </div>
+                <div class="w-70">
+                    <ul>
+                        <li class="under"><a href=""
+                                style="border-bottom:#106eea solid ; color:#106eea; padding:10px 0px">Home</a></li>
+                        <li class="under"><a href="">About</a></li>
+                        <li class="under"><a href="">Services</a></li>
+                        <li class="under"><a href="">Portfolio</a></li>
+                        <li class="under"><a href="">Team</a></li>
+                        <li class="drop-down"><a href="">Drop Down<i class="fa-solid fa-chevron-down"
+                                    style="border-bottom:none"></i></a>
+                            <ul>
+                                <li><a href="">Drop Down 1</a></li>
+                                <li><a href="">Deep Drop Down<i class="fa-solid fa-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="" style="width: 200px;">Deep Drop Down 1</a></li>
+                                        <li><a href="">Deep Drop Down 2</a></li>
+                                        <li><a href="">Deep Drop Down 3</a></li>
+                                        <li><a href="">Deep Drop Down 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Drop Down 2</a></li>
+                                <li><a href="">Drop Down 3</a></li>
+                                <li><a href="">Drop Down 4</a></li>
+                            </ul>
+                        </li>
+                        <li class="under"><a href="">Contact</a></li>
+                    </ul>
                 </div>
-            </div>
-
-            <div>
-
             </div>
         </div>
     </header>
-    <main class="font-base">
-        <div class="w-full uil-bg-xenon-900 relative text-white">
-            <div class="mx-auto grid grid-cols-12 ">
-                <div
-                    class="flex flex-col justify-center items-center lg:items-start px-32 col-span-12 lg:col-span-5 text-center lg:text-left">
+    <!-- navigation bar end-->
 
-                    <div class=" xl:">
-                        <h1 class="font-bold break-words mb-4 text-4xl xl:uil-font-size-45">
-                            Show user what they need
-                        </h1>
-                        <p class="text-center text-lg lg:text-2xl lg:text-left">With AI Search that understands them</p>
-                    </div>
-                    <div class="flex my-10 gap-x-3 flex-col lg:flex-row gap-y-3">
-                        <div
-                            class="button rounded-lg w-full w-auto search-box flex flex-grow-0 flex-shrink trucnate nav-demo-pd decoration-white backgrond-start">
-                            <button class=""><a href="" class="flex gap-3 items-center">
-                                    <p>Get Started</p>
-                                </a></button>
-                        </div>
-                        <div
-                            class="button rounded-lg w-full w-auto search-box flex justify-center trucnate nav-demo-pd border-2 border-solid uil-border-grey-700 ">
-                            <button class=""><a href="" class="flex gap-3 items-center">
-                                    <p>Request Demo</p>
-                                </a></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-0 lg:col-span-7 ">
-                    <div class="hidden lg:block">
-                        <img src="https://www.algolia.com/_next/image/?url=https%3A%2F%2Fres.cloudinary.com%2Fhilnmyskv%2Fimage%2Fupload%2Fv1701303285%2FAlgolia_com_Website_assets%2Fimages%2Fhomepage%2F2023%2Fwomen.png&w=1200&q=75
-                        " alt="" width="100%">
-                    </div>
+    <!-------------------------------------- image start------------------------------------ -->
 
-                    <div
-                        class="hidden xl:flex absolute pos button rounded-full bg-white bg-opacity-20 max-w-448 w-full min-w-0 search-box flex flex-grow-0 flex-shrink trucnate nav-search-pd nav-xl-pd lg:nav-search-pd items-center justify-between">
-                        <button class="">
-                            <a href="" class="flex gap-3 items-center">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <p class=" fade-in-text">Top goal Scorer in Woman's cup</p>
-                            </a>
-                        </button>
-                        <i class="fa-solid fa-microphone"></i>
+    <div class="img-100">
+        <div class="img-1320">
+            <div class="image">
+                <h1>Welcome to <span style="color:#106eea">Bizland</span></h1>
+                <h2>We are team of talented designers making websites with Bootstrap</h2>
+                <div class="b1-flex">
+                    <div class="b1">
+                        <a href="">GET STARTED</a>
                     </div>
-
-                </div>
-            </div>
-            <div class=" pb-1  pos2 lg:w-100p lg:absolute lg:bottom-0 hidden sm:flex flex-wrap justify-center">
-                <div class="flex uil-w-100-200 justify-center"><img alt="Alltrails"
-                        src="https://res.cloudinary.com/hilnmyskv/image/upload/v1715156912/ui-library/logos/white/alltrails.svg"
-                        class="uil-max-w-100p uil-object-contain  uil-h-40p" width="75" height="406">
-                </div>
-                <div class="flex uil-w-100-200 justify-center"><img alt="Culture King"
-                        src="https://res.cloudinary.com/hilnmyskv/image/upload/v1715156912/ui-library/logos/white/culture-king.svg"
-                        class="uil-max-w-100p uil-object-contain " width="75" height="53">
-                </div>
-                <div class="flex uil-w-100-200 justify-center"><img alt="Decathlon"
-                        src="https://res.cloudinary.com/hilnmyskv/image/upload/f_auto/v1715156912/ui-library/logos/white/decathlon.png"
-                        class="uil-max-w-100p uil-object-contain  uil-h-40p" width="75" height="1167">
-                </div>
-                <div class="flex uil-w-100-200 justify-center"><img alt="Gymshark"
-                        src="https://res.cloudinary.com/hilnmyskv/image/upload/v1715156912/ui-library/logos/white/gymshark.svg"
-                        class="uil-max-w-100p uil-object-contain  uil-h-30p" width="75" height="478">
-                </div>
-                <div class="flex uil-w-100-200 justify-center"><img alt="ManoMano"
-                        src="https://res.cloudinary.com/hilnmyskv/image/upload/f_auto/v1715156912/ui-library/logos/white/manomano.png"
-                        class="uil-max-w-100p uil-object-contain   uil-h-60p" width="75" height="379">
-                </div>
-                <div class="flex uil-w-100-200 justify-center"><img alt="Medium"
-                        src="https://res.cloudinary.com/hilnmyskv/image/upload/v1715156912/ui-library/logos/white/medium.svg"
-                        class="uil-max-w-100p uil-object-contain   uil-h-30p" width="75" height="30">
-                </div>
-                <div class="flex uil-w-100-200 justify-center"><img alt="Slack"
-                        src="https://res.cloudinary.com/hilnmyskv/image/upload/v1715156912/ui-library/logos/white/slack.svg"
-                        class="uil-max-w-100p uil-object-contain   uil-h-40p" width="75" height="44">
-                </div>
-                <div class="flex uil-w-100-200 justify-center"><img alt="Swedol"
-                        src="https://res.cloudinary.com/hilnmyskv/image/upload/f_auto/v1715156912/ui-library/logos/white/swedol.png"
-                        class="uil-max-w-100p uil-object-contain   uil-h-30p" width="100" height="30">
+                    <div class="b2">
+                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q"> <i
+                                class="fa-regular fa-circle-play fa-2xl" style="color: #247cf0;"></i> Watch Video</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!-------------------------------------------------- image end--------------------------------------------- -->
 
-        <section class="pt-28 uil-text-grey-900 pb-14 px-12">
-            <div class="pb-14 text-center">
-                <h1 class="text-4xl font-extrabold">A recognized leader</h1>
-            </div>
-            <div class="flex justify-center lg:flex-row items-center flex-col-reverse ">
-                <div class="ustify-around text-jutify gap-y-3 ">
-                    <h3 class="text-2xl my-4">
-                        The 2024 Gartner® Magic Quadrant™ for Search and Product Discovery
-                    </h3>
-                    <p class="text-base my-4">
-                        Algolia is in the 2024 Gartner® Magic Quadrant™ for Search and Product Discovery positioned
-                        furthest for Completeness of Vision. Learn more by downloading a copy of the report.
-                    </p>
-                    <div
-                        class="button rounded search-box  trucnate nav-demo-pd decoration-white backgrond-start my-4 inline /">
-                        <button class=""><a href="" class="flex ">
-                                <p>Learn more</p>
-                            </a></button>
+    <!----------------------------------------------------- box start----------------------------------------- -->
+    <div class="box-100">
+        <div class="box-1320">
+            <div class="box-flex">
+                <div class="box-25 box-25-flex">
+                    <div class="icon">
+                        <i class="fa-solid fa-basketball fa-2xl"></i>
+                    </div>
+                    <div class="title">
+                        lorem lpsum
+                    </div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nobis
                     </div>
                 </div>
-                <div class=" pl-12">
-                    <img src="https://www.algolia.com/_next/image/?url=https%3A%2F%2Fres.cloudinary.com%2Fhilnmyskv%2Fimage%2Fupload%2Fv1716416539%2Fgartner%2Fgarter-1x1.jpg&w=1200&q=75"
-                        width="100%">
+                <div class="box-25 box-25-flex">
+                    <div class="icon">
+                        <i class="fa-regular fa-file-lines fa-2xl"></i></i>
+                    </div>
+                    <div class="title">
+                        Sed ut prespiciatis
+                    </div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nobis
+                    </div>
+                </div>
+                <div class="box-25 box-25-flex">
+                    <div class="icon">
+                        <i class="fa-solid fa-gauge-simple-high fa-2xl"></i></i>
+                    </div>
+                    <div class="title">
+                        Magni Dolares
+                    </div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nobis
+                    </div>
+                </div>
+                <div class="box-25 box-25-flex">
+                    <div class="icon">
+                        <i class="fa-solid fa-earth-americas fa-2xl"></i></i>
+                    </div>
+                    <div class="title">
+                        Nemo Enim
+                    </div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nobis
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+    <!------------------------------------------------------- box end---------------------------------- -->
 
-        <section class="pt-28 uil-text-grey-900 pb-14 px-12 uil-bg-grey-100"> <!--2nd section-->
-            <div class="">
-                <h1 class="text-4xl font-extrabold">The one-stop shop for</h1>
-                <h1 class="text-4xl font-extrabold">AI search</h1>
-            </div>
-            <div class="justify-around text-jutify gap-y-3 ">
-                <p class="text-base my-4">
-                    Algolia's AI Search suit has unique strengths
-                </p>
-            </div>
-            <div class="flex  lg:flex-row items-center flex-col-reverse justify-center grid grid-cols-12 ">
-                <div class="justify-around text-jutify gap-y-3 col-span-12 lg:col-span-7">
-                    <div class="py-5 px-4 flex justify-between items-center  border-b border-solid border-slate-600">
-                        <h3 class="text-2xl my-4 font-extrabold  ">
-                            Easy To Use
-                        </h3>
-                        <i class="fa-solid fa-angle-down uil-text-xenon-600 "></i>
-                    </div>
-                    <div class="py-5 px-4 flex justify-between items-center  border-b border-solid border-slate-600">
-                        <h3 class="text-2xl my-4 font-extrabold  ">
-                            Fast
-                        </h3>
-                        <i class="fa-solid fa-angle-down uil-text-xenon-600 "></i>
-                    </div>
-                    <div class="py-5 px-4 flex justify-between items-center  border-b border-solid border-slate-600">
-                        <h3 class="text-2xl my-4 font-extrabold  ">
-                            Scalable
-                        </h3>
-                        <i class="fa-solid fa-angle-down uil-text-xenon-600 "></i>
-                    </div>
-                </div>
-                <div class=" pl-12 col-span-5 hidden lg:block">
-                    <img src="https://www.algolia.com/_next/image/?url=https%3A%2F%2Fres.cloudinary.com%2Fhilnmyskv%2Fimage%2Fupload%2Fv1706798159%2FAlgolia_com_Website_assets%2Fimages%2Fhomepage%2F2023%2FHomePage_-_Easy_to_Use-min.png&w=1200&q=75"
-                        width="100%">
-                </div>
-            </div>
-            <div
-                class="button rounded-md search-box  trucnate nav-demo-pd decoration-white backgrond-start inline-flex  mt-14">
-                <button class=""><a href="" class="flex ">
-                        <p>Read more</p>
-                    </a></button>
-            </div>
-        </section>
-        <!-- 3rd section -->
-        <section class="pt-28 uil-text-grey-900 pb-14 px-12 ">
-            <div class="text-center">
-                <h1 class="text-4xl font-extrabold">Scaling ahead of your needs</h1>
-            </div>
-            <div class="text-center gap-y-3 pb-14">
-                <p class="text-lg my-4 font-normal">
-                    Customers depend on Algolia to handle more queries than any other hosted search engine.
-                </p>
-            </div>
-            <div class="flex justify-center lg:flex-row items-center flex-col flex-wrap gap-y-8 lg:gap-y-20">
-                <div
-                    class="px-4 lg:border-r lg:border-solid uil-border-grey-147 uil-calc-w flex flex-col justify-center items-center">
-                    <h1 class="text-4xl font-extrabold uil-text-xenon-400">1.7+ Trillion</h1>
-                    <p class="text-lg my-4 font-normal text-center uil-text-grey-700">
-                        Searches every year
-                    </p>
-                </div>
-                <div
-                    class="px-4 lg:border-r lg:border-solid uil-border-grey-147 uil-calc-w flex flex-col justify-center items-center">
-                    <h1 class="text-4xl font-extrabold uil-text-xenon-400">99.999%</h1>
-                    <p class="text-lg my-4 font-normal text-center uil-text-grey-700">
-                        Uptime SlA available
-                    </p>
-                </div>
-                <div class="px-4  uil-calc-w flex flex-col justify-center items-center">
-                    <h1 class="text-4xl font-extrabold uil-text-xenon-400">17000+</h1>
-                    <p class="text-lg my-4 font-normal text-center uil-text-grey-700">
-                        Customers across 150+ contries
-                    </p>
-                </div>
-                <div
-                    class="px-4 lg:border-r lg:border-solid uil-border-grey-147 uil-calc-w flex flex-col justify-center items-center">
-                    <h1 class="text-4xl font-extrabold uil-text-xenon-400">30+ billion</h1>
-                    <p class="text-lg my-4 font-normal text-center uil-text-grey-700">
-                        records indexed
-                    </p>
-                </div>
-                <div
-                    class="px-4 lg:border-r lg:border-solid uil-border-grey-147 uil-calc-w flex flex-col justify-center items-center">
-                    <h1 class="text-4xl font-extrabold uil-text-xenon-400">100% </h1>
-                    <p class="text-lg my-4 font-normal text-center uil-text-grey-700">
-                        compliant & secure with SAML, SOC3, ISO27001, HIPAA, C5, MACH Alliance
-                    </p>
-                </div>
-                <div class="px-4 uil-calc-w flex flex-col justify-center items-center">
-                    <h1 class="text-4xl font-extrabold uil-text-xenon-400">382%</h1>
-                    <p class="text-lg my-4 font-normal text-center uil-text-grey-700">
-                        ROI according to Forrester Research
-                    </p>
-                </div>
-            </div>
-            <div class="flex justify-center mx-auto">
-                <div class="button rounded-md search-box trucnate nav-demo-pd decoration-white backgrond-start  mt-14 ">
-                    <button class=""><a href="" class="flex ">
-                            <p>Contact Sales</p>
-                        </a></button>
-                </div>
-            </div>
-        </section>
 
-        <!-- 4th section -->
-        <section class="pt-28 uil-text-grey-900 px-12 uil-bg-grey-100 ">
-            <div class="flex ">
-                <div class="flex  flex-col items-start gap-y-3">
-                    <div class="text-left">
-                        <h1 class="text-4xl font-extrabold">Enterprises, delight your</h1>
-                        <h1 class="text-4xl font-extrabold">Customers</h1>
-                    </div>
-                    <div>
-                        <p class="text-base">
-                            Grow your customer satisfaction - and sales. Because when your customers feel understood,
-                            they click and they come back.
-                        </p>
-                    </div>
-                    <div>
-                        <p class="text-base">
-                            Get help from our experts to start fast and run efficiently.
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class=" rounded-full p-4 css-1iypn1n flex items-center justify-center">
-                        <button class=""><a href="" class=" "><i class="fa-solid fa-arrow-left"></i>
-                            </a></button>
-                    </div>
-                </div>
-                <div class="flex  flex-col items-start gap-y-3 ">
 
-                    <div class="flex justify-center"><img alt="The Times"
-                            src="https://res.cloudinary.com/hilnmyskv/image/upload/v1715156912/ui-library/logos/the-times.svg"
-                            class="" width="177" height="20"></div>
+    <!-- -----------------------------------------------------about section start ----------------------------- -->
+    <div class="about-100">
+        <div class="about-1320 about-flex">
+            <div class="about-title-flex">
+                <div class="about-title">
+                    ABOUT
+                </div>
+                <div class="about-sub-title">
+                    Find Out More <span style="color:#247cf0">About Us</span>
+                </div>
+                <div class="about-title-des">
+                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+                        atque vitae autem. </p>
+                </div>
+            </div>
 
-                    <div>
-                        <blockquote class="text-xl m-0 text-center">
-                            “<!-- -->Algolia is a breeze to work with. With Algolia, our editorial team has seen
-                            significant productivity improvements when building the daily online edition of The Times
-                            and weekly edition of The Sunday Times, with search being 300-500 times faster than our
-                            prior solution.<!-- -->”</blockquote>
+            <!-- image and text beside it  start-->
+            <div class="about-des"> <!-- this is side icon , side image class-->
+                <div class="about-des-flex"> <!-- main flex clas -->
+                    <div class="about-des-image"> <!--image class -->
+                        <img src="https://bootstrapmade.com/demo/templates/BizLand/assets/img/about.jpg" alt="">
+                    </div>
+
+                    <!-- text beside image -->
+                    <div class="about-des-text"> <!--Main claass of text beside image-->
+                        <div class="about-des-text-title"> <!--First title -->
+                            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                        </div>
+                        <div class="about-des-text-des"> <!-- Discription of the title -->
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="about-icon-main-flex"> <!--main Flex for icon and its content-->
+                            <div class="about-des-icon about-des-icon-flex">
+                                <div class="about-des-icon1">
+                                    <i class="fa-solid fa-shop fa-xl"></i>
+                                </div>
+                            </div>
+                            <!-- icon and text beside it start -->
+                            <div class="about-icon-text"><!--text beside the icon -->
+                                <div class="about-des-icon-text">
+                                    <div class="about-des-icon-text1">
+                                        <h5> Ullamco laboris nisi ut aliquip consequat</h5>
+                                    </div>
+                                    <div class="about-des-icon-text2">
+                                        <p> Magni facilis facilis repellendus cum excepturi quaerat praesentium libre
+                                            trade</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-icon-main-flex">
+                            <div class="about-des-icon about-des-icon-flex">
+                                <div class="about-des-icon1">
+                                    <i class="fa-solid fa-photo-film fa-xl"></i>
+                                </div>
+                            </div>
+                            <div class="about-icon-text">
+                                <div class="about-des-icon-text">
+                                    <div class="about-des-icon-text1">
+                                        <h5>Magnam soluta odio exercitationem</h5>
+                                    </div>
+                                    <div class="about-des-icon-text2">
+                                        <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna
+                                            pasata redi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- icon and trxt beside it over  -->
+
+                        <!-- last description start-->
+                        <div class="last-des">
+                            <p> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                sint
+                                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum</p>
+                        </div>
+                        <!-- last description over -->
+                    </div>
+                    <!-- text beside image  -->
+                </div>
+            </div>
+            <!-- icon and text beside it over  -->
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------------about section end ---------------------------------- -->
+
+
+
+    <!------------------------------------------------------------------------ skill start ------------------------------------ -->
+    <div class="skill-100">
+        <div class="skill-1320">
+            <div class="skill skill-flex">
+                <div class="skill-50">
+                    <div class="skill-50-text-flex skill-flex-text">
+                        <div>
+                            <p>HTML</p>
+                        </div>
+                        <div>
+                            <p>100%</p>
+                        </div>
+                    </div>
+                    <div class="skill-50-box"></div>
+                </div>
+                <div class="skill-50">
+                    <div class="skill-50-text-flex skill-flex-text">
+                        <div>
+                            <p>PHP</p>
+                        </div>
+                        <div>
+                            <p>80%</p>
+                        </div>
+                    </div>
+                    <div class="skill-50-box"></div>
+                </div>
+                <div class="skill-50">
+                    <div class="skill-50-text-flex skill-flex-text">
+                        <div>
+                            <p>CSS</p>
+                        </div>
+                        <div>
+                            <p>90%</p>
+                        </div>
+                    </div>
+                    <div class="skill-50-box"></div>
+                </div>
+                <div class="skill-50">
+                    <div class="skill-50-text-flex skill-flex-text">
+                        <div>
+                            <p>WORDPRESS</p>
+                        </div>
+                        <div>
+                            <p>90%</p>
+                        </div>
+                    </div>
+                    <div class="skill-50-box"></div>
+                </div>
+                <div class="skill-50">
+                    <div class="skill-50-text-flex skill-flex-text">
+                        <div>
+                            <p>JAVASCRIPT</p>
+                        </div>
+                        <div>
+                            <p>75%</p>
+                        </div>
+                    </div>
+                    <div class="skill-50-box"></div>
+                </div>
+                <div class="skill-50">
+                    <div class="skill-50-text-flex skill-flex-text  ">
+                        <div>
+                            <p>PHOTOSHOP</p>
+                        </div>
+                        <div>
+                            <p>55%</p>
+                        </div>
+                    </div>
+                    <div class="skill-50-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------------------------------------------------------skill end -------------------------------------------- -->
+
+
+    <!-- -----------------------------------------------------------------------data start ------------------------------------------ -->
+    <div class="data-100">
+        <div class="data-1320">
+            <div class="data-flex">
+                <div class="data-25">
+                    <div class="data-25-box-flex">
+                        <div class="data-25-box">
+                            <i class="fa-regular fa-face-smile fa-xl" style="color: #ffffff;"></i>
+                        </div>
+                        <div class="data-25-text">
+                            <div class="div-25-text-title">
+                                <p>232</p>
+                            </div>
+                            <p>Happy Client</p>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class=" rounded-full p-4 css-1iypn1n flex items-center justify-center">
-                        <div class="">
-                            <button class=""><a href="" class="">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a></button>
+                <div class="data-25">
+                    <div class="data-25-box-flex">
+                        <div class="data-25-box">
+                            <i class="fa-solid fa-book fa-xl" style="color: #ffffff;"></i>
+                        </div>
+                        <div class="data-25-text">
+                            <div class="div-25-text-title">
+                                <p>521</p>
+                            </div>
+                            <p>Projects</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-25">
+                    <div class="data-25-box-flex">
+                        <div class="data-25-box">
+                            <i class="fa-solid fa-headphones fa-xl" style="color: #ffffff;"></i>
+                        </div>
+                        <div class="data-25-text">
+                            <div class="div-25-text-title">
+                                <p>1463</p>
+                            </div>
+                            <p>Hours of Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-25">
+                    <div class="data-25-box-flex">
+                        <div class="data-25-box">
+                            <i class="fa-solid fa-person fa-xl" style="color: #ffffff;"></i>
+                        </div>
+                        <div class="data-25-text">
+                            <div class="div-25-text-title">
+                                <p>15</p>
+                            </div>
+                            <p>Hard Workers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------------- data end --------------------------------------------- -->
+
+    <!-- ------------------------------------------------------------ ad  starts -------------------------------------------------- -->
+    <div class="ad-100">
+        <div class="ad-1320">
+            <div class="ad-16-flex row  ">
+                <div class="ad-16">
+                    <img src="https://bootstrapmade.com/demo/templates/BizLand/assets/img/clients/client-1.png" alt="">
+                </div>
+                <div class="ad-16">
+                    <img src="https://bootstrapmade.com/demo/templates/BizLand/assets/img/clients/client-2.png" alt="">
+                </div>
+                <div class="ad-16">
+                    <img src="https://bootstrapmade.com/demo/templates/BizLand/assets/img/clients/client-3.png" alt="">
+                </div>
+                <div class="ad-16">
+                    <img src="https://bootstrapmade.com/demo/templates/BizLand/assets/img/clients/client-4.png" alt="">
+                </div>
+                <div class="ad-16">
+                    <img src="https://bootstrapmade.com/demo/templates/BizLand/assets/img/clients/client-5.png" alt="">
+                </div>
+                <div class="ad-16">
+                    <img src="https://bootstrapmade.com/demo/templates/BizLand/assets/img/clients/client-6.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------------------------------------------------------------ad ends ----------------------------------------------------- -->
+
+
+    <!----------------------------------------------------------------- serv start  ------------------------------------------->
+    <div class="serv-100">
+        <div class="serv-1320">
+            <div class="about-title-flex">
+                <!-- as this is the same as about in upper section its class and properties as used -->
+                <div class="about-title serve-title">
+                    SERVICES
+                </div>
+                <div class="about-sub-title">
+                    Check Our <span style="color:#247cf0">Services</span>
+                </div>
+                <div class="about-title-des">
+                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+                        atque vitae autem. </p>
+                </div>
+            </div>
+
+            <!----------------------------- service box start  -------------------------------------->
+            <div class="serv-box">
+                <div class="serv-flex">
+                    <!-- 1 -->
+                    <div class="serv-33 serv-in-flex">
+                        <div class="serv-in-box">
+                            <i class="fa-solid fa-earth-americas fa-2xl"></i>
+                        </div>
+                        <div class="serv-in-title">
+                            <a href="">Lorem Ipsum</a>
+                        </div>
+                        <div class="serv-in-des">
+                            Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
+                        </div>
+                    </div>
+
+
+                    <!-- 2 -->
+                    <div class="serv-33 serv-in-flex">
+                        <div class="serv-in-box">
+                            <i class="fa-solid fa-earth-americas fa-2xl"></i>
+                        </div>
+                        <div class="serv-in-title">
+                            <a href="">Sed ut perspiciatis</a>
+                        </div>
+                        <div class="serv-in-des">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="serv-33 serv-in-flex">
+                        <div class="serv-in-box">
+                            <i class="fa-solid fa-earth-americas fa-2xl"></i>
+                        </div>
+                        <div class="serv-in-title">
+                            <a href="">Magni Dolores</a>
+                        </div>
+                        <div class="serv-in-des">
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        </div>
+                    </div>
+
+
+                    <!-- 4 -->
+                    <div class="serv-33 serv-in-flex">
+                        <div class="serv-in-box">
+                            <i class="fa-solid fa-earth-americas fa-2xl"></i>
+                        </div>
+                        <div class="serv-in-title">
+                            <a href="">Nemo Enim</a>
+                        </div>
+                        <div class="serv-in-des">
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="serv-33 serv-in-flex">
+                        <div class="serv-in-box">
+                            <i class="fa-solid fa-earth-americas fa-2xl"></i>
+                        </div>
+                        <div class="serv-in-title">
+                            <a href="">Dele cardo</a>
+                        </div>
+                        <div class="serv-in-des">
+                            Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="serv-33 serv-in-flex">
+                        <div class="serv-in-box">
+                            <i class="fa-solid fa-earth-americas fa-2xl"></i>
+                        </div>
+                        <div class="serv-in-title">
+                            <a href="">Divera don</a>
+                        </div>
+                        <div class="serv-in-des">
+                            Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!----------------------------- service box end  ---------------------------------------->
+        </div>
+    </div>
+    <!----------------------------------------------------------------- serv end ---------------------------------------- -->
+
+
+    <!-- ----------------------------------------------------------------photo start ------------------------- -->
+    <div class="photo-100">
+        <div class="photo-1320">
+            <div class="photo-flex">
+                <div class="photo-box"></div>
+                <div class="photo-title">
+                    <h3>Matt Brandon</h3>
+                    <p>Freelancer</p>
+                </div>
+                <div class="photo-des">
+                    <p><i class="fa-solid fa-quote-left fa-2xl"></i> Quis quorum aliqua sint quem legam fore sunt eram
+                        irure aliqua veniam tempor noster veniam enim
+                        culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum
+                        quid. <i class="fa-solid fa-quote-right fa-2xl"></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------photo end ----------------------------- -->
+
+    <!-- ---------------------------------------------------------------protolio start ------------------------- -->
+    <div class="port-100">
+        <div class="port-1320">
+            <div class="about-title-flex">
+                <!-- as this is the same as about in upper section its class and properties as used -->
+                <div class="about-title serve-title">
+                    PORTFOLIO
+                </div>
+                <div class="about-sub-title">
+                    Check Our <span style="color:#247cf0">Portfolio</span>
+                </div>
+                <div class="about-title-des">
+                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+                        atque vitae autem. </p>
+                </div>
+                <div class="port-menu">
+                    <div class="port-menu-box">
+                        <a href="" style="color:#106eea">ALL</a>
+                    </div>
+                    <div class="port-menu-box">
+                        <a href="" class="port-app">APP</a>
+                    </div>
+                    <div class="port-menu-box">
+                        <a href="" class="port-card">CARD</a>
+                    </div>
+                    <div class="port-menu-box">
+                        <a href="" class="port-web">WEB</a>
+                    </div>
+                </div>
+
+                <!---------------------------------image start -------------------------- -->
+                <div class="port-image port-image-flex">
+
+                    <div class="port-image-row1">
+                        <div class="port-image-app">
+                            <img src="image/image1.jpg"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>App1</h4>
+                                        </div>
+                                        <div>
+                                            <p>App</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="port-image-app">
+                            <img src="image/image-2.jpg"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>App2</h4>
+                                        </div>
+                                        <div>
+                                            <p>App</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="port-image-app">
+                            <img src="image/image-3.webp"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>App3</h4>
+                                        </div>
+                                        <div>
+                                            <p>App</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
+
+                    <div class="port-image-row2">
+
+                        <div class="port-image-app">
+                            <img src="image/image-4.jpg"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>Web1</h4>
+                                        </div>
+                                        <div>
+                                            <p>Web</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="port-image-app">
+                            <img src="image/image-5.jpg"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>Web2</h4>
+                                        </div>
+                                        <div>
+                                            <p>Web</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="port-image-app">
+                            <img src="image/image-6.png"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>Web3</h4>
+                                        </div>
+                                        <div>
+                                            <p>Web</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="port-image-row3">
+
+                        <div class="port-image-app">
+                            <img src="image/image-7.jpg"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>Card1</h4>
+                                        </div>
+                                        <div>
+                                            <p>Card</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="port-image-app">
+                            <img src="image/image-8.webp"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>Card2</h4>
+                                        </div>
+                                        <div>
+                                            <p>Card</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="port-image-app">
+                            <img src="image/image-9.jpg"
+                                alt="">
+                            <div class="port-image-box port-dis">
+                                <div class="port-flex">
+                                    <div class="port-image-box-flex1">
+                                        <div>
+                                            <h4>Card3</h4>
+                                        </div>
+                                        <div>
+                                            <p>Card</p>
+                                        </div>
+                                    </div>
+                                    <div class="port-image-box-flex2">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
-
-
             </div>
-        </section>
-    </main>
+            <!-- -----------------------------image end ----------------------------- -->
+
+        </div>
+    </div>
+    </div>
+    <!-- --------------------------------------------------------------- portfolio end ------------------------- -->
     <footer class="bg-gray-800 text-white py-8 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between">
