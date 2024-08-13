@@ -6,79 +6,216 @@ import { Component } from '@angular/core';
   styleUrls: ['./password-checker.component.css']
 })
 export class PasswordCheckerComponent {
+  mode: string = 'basic'; // Default mode
   password: string = '';
-  strength: string = '';
-  strengthScore: number = 0;
-  strengthClass: string = 'progress-bar bg-danger';
-
+  generatedPassword: string = ''; // To store the generated password
   personalDetails = {
     firstName: '',
     lastName: '',
     birthDate: ''
   };
+  strength: string = '';
+  strengthScore: number = 0;
+  strengthClass: string = 'progress-bar bg-warning';
+  passwordVisible: boolean = false;
+  feedback: string[] = []; // To store feedback messages
 
-  top10Passwords = ['123456', 'password', '123456789', '12345678', '12345', '1234567', '123123', '000000', 'qwerty', 'abc123'];
-
-  checkPassword() {
-    this.checkTop10Passwords();
+  setMode(mode: string): void {
+    this.mode = mode;
+    this.password = ''; // Clear the input bar
+    this.generatedPassword = ''; // Clear the generated password
+    this.strengthScore = 0; // Reset the progression bar
+    this.strength = ''; // Clear the strength text
+    this.feedback = []; // Clear feedback messages
+    this.strengthClass = 'progress-bar bg-warning'; // Reset progress bar color
+    this.personalDetails = {
+      firstName: '',
+      lastName: '',
+      birthDate: ''
+    }; // Clear personal details
   }
 
-  checkBasicLevel() {
-    const hasUpperCase = /[A-Z]/.test(this.password);
-    const hasLowerCase = /[a-z]/.test(this.password);
-    const hasNumbers = /\d/.test(this.password);
-    const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(this.password);
-    const length = this.password.length;
+  togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
-    let strengthScore = 0;
-    if (hasUpperCase) strengthScore += 20;
-    if (hasLowerCase) strengthScore += 20;
-    if (hasNumbers) strengthScore += 20;
-    if (hasSpecialChars) strengthScore += 20;
-    if (length >= 8) strengthScore += 20;
+  handleKeyDown(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      this.checkPassword();
+    } else if (event.key === 'Tab') {
+      const modes = ['basic', 'intermediate', 'advanced'];
+      const currentIndex = modes.indexOf(this.mode);
+      const nextIndex = (currentIndex + 1) % modes.length;
+      this.setMode(modes[nextIndex]);
+    }
+  }
 
-    this.strengthScore = strengthScore;
+  checkPassword(): void {
+    this.feedback = []; // Reset feedback messages
+
+    if (this.mode === 'advanced' && !this.generatedPassword && (!this.personalDetails.firstName || !this.personalDetails.lastName || !this.personalDetails.birthDate)) {
+      this.strength = 'Please fill in all personal details to evaluate password strength.';
+      this.strengthScore = 0;
+      this.strengthClass = 'progress-bar bg-warning';
+      return; // Stop the execution if personal details are not filled
+    }
+
+    if (this.mode === 'advanced' && this.generatedPassword) {
+      // Skip personal details check if password is generated
+      this.checkBasicLevel(); // Check password strength
+    } else if (this.mode === 'advanced') {
+      this.checkAdvancedLevel();
+    } else if (this.mode === 'intermediate') {
+      this.checkTop10Passwords();
+    } else {
+      this.checkBasicLevel();
+    }
+
     this.updateStrengthMeter();
   }
 
-  checkTop10Passwords() {
-    if (this.top10Passwords.includes(this.password)) {
-      this.strength = 'Very Weak (Common Password)';
-      this.strengthScore = 20;
+  checkBasicLevel(): void {
+    const hasUpperCase = /[A-Z]/.test(this.password);
+    const hasLowerCase = /[a-z]/.test(this.password);
+    const hasNumbers = /\d/.test(this.password);
+    const hasSpecialChars = /\W/.test(this.password);
+    const length = this.password.length;
+
+    this.feedback = []; // Reset feedback messages
+
+    // Check for specific criteria and add feedback messages
+    if (!hasUpperCase) {
+      this.feedback.push('Missing uppercase letter');
+    }
+    if (!hasLowerCase) {
+      this.feedback.push('Missing lowercase letter');
+    }
+    if (!hasNumbers) {
+      this.feedback.push('Missing a number');
+    }
+    if (!hasSpecialChars) {
+      this.feedback.push('Missing special character');
+    }
+    if (length < 8) {
+      this.feedback.push('Password is too short');
+    }
+
+    // Determine strength score and set feedback based on criteria
+    if (length >= 8 && hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChars) {
+      this.strength = 'Very Strong';
+      this.strengthScore = 90;
+      this.strengthClass = 'progress-bar bg-success';
+    } else if (length >= 8 && (hasUpperCase || hasLowerCase) && hasNumbers && hasSpecialChars) {
+      this.strength = 'Strong';
+      this.strengthScore = 70;
+      this.strengthClass = 'progress-bar.bg-primary';
+    } else if (length >= 6 && (hasUpperCase || hasLowerCase) && hasNumbers) {
+      this.strength = 'Medium';
+      this.strengthScore = 50;
+      this.strengthClass = 'progress-bar.bg-info ';
+    } else if (length >= 6) {
+      this.strength = 'Weak';
+      this.strengthScore = 30;
+      this.strengthClass = 'progress-bar.bg-warning';
+    } else {
+      this.strength = 'Very Weak';
+      this.strengthScore = 10;
       this.strengthClass = 'progress-bar bg-danger';
+    }
+  }
+
+  checkTop10Passwords(): void {
+    const topPasswords = ['123456', 'password', '12345678', 'qwerty', '123456789', '12345', '1234', '111111', '123123'];
+    if (topPasswords.includes(this.password)) {
+      this.feedback.push('Password is too common');
+      this.strengthScore = 10; // Very Weak
     } else {
       this.checkBasicLevel();
     }
   }
 
-  generatePassword() {
-    const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
-    let generatedPassword = '';
-    for (let i = 0; i < 8; i++) {
-      generatedPassword += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
-    }
+  checkAdvancedLevel(): void {
+    const { firstName, lastName, birthDate } = this.personalDetails;
 
-    generatedPassword += this.personalDetails.firstName.charAt(0);
-    generatedPassword += this.personalDetails.lastName.charAt(0);
-    generatedPassword += this.personalDetails.birthDate.split('-')[0].slice(-2);
+    const birthYear = birthDate.split('-')[0];
+    const birthMonth = birthDate.split('-')[1];
+    const birthDay = birthDate.split('-')[2];
 
-    this.password = generatedPassword;
-    this.checkTop10Passwords(); // Check the generated password strength
-  }
+    const hasPersonalInfo = [
+      firstName.toLowerCase(),
+      lastName.toLowerCase(),
+      birthYear,
+      birthMonth,
+      birthDay
+    ].some(info => this.password.toLowerCase().includes(info));
 
-  updateStrengthMeter() {
-    if (this.strengthScore <= 40) {
-      this.strength = 'Weak';
-      this.strengthClass = 'progress-bar bg-danger';
-    } else if (this.strengthScore <= 60) {
-      this.strength = 'Medium';
-      this.strengthClass = 'progress-bar bg-warning';
-    } else if (this.strengthScore <= 80) {
-      this.strength = 'Strong';
-      this.strengthClass = 'progress-bar bg-info';
+    if (hasPersonalInfo) {
+      this.feedback.push('Password contains personal information');
+      this.strengthScore = 10; // Very Weak
     } else {
-      this.strength = 'Very Strong';
-      this.strengthClass = 'progress-bar bg-success';
+      this.checkBasicLevel();
     }
   }
+
+  generatePassword(): void {
+    const upperChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lowerChars = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+
+    const allChars = upperChars + lowerChars + numbers + specialChars;
+
+    let generatedPassword = '';
+    let hasUpperCase = false;
+    let hasLowerCase = false;
+    let hasNumbers = false;
+    let hasSpecialChars = false;
+
+    // Generate a very strong password
+    while (!(hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChars && generatedPassword.length >= 12)) {
+      generatedPassword = '';
+      hasUpperCase = false;
+      hasLowerCase = false;
+      hasNumbers = false;
+      hasSpecialChars = false;
+
+      for (let i = 0; i < 12; i++) {
+        const randomChar = allChars.charAt(Math.floor(Math.random() * allChars.length));
+        generatedPassword += randomChar;
+
+        if (upperChars.includes(randomChar)) {
+          hasUpperCase = true;
+        }
+        if (lowerChars.includes(randomChar)) {
+          hasLowerCase = true;
+        }
+        if (numbers.includes(randomChar)) {
+          hasNumbers = true;
+        }
+        if (specialChars.includes(randomChar)) {
+          hasSpecialChars = true;
+        }
+      }
+    }
+
+    this.generatedPassword = generatedPassword;
+
+    // Use generated password for checking
+    this.password = generatedPassword;
+    this.checkPassword();
+  }
+
+  updateStrengthMeter(): void {
+    // Optional: Update strength meter based on password strength score
+  }
+  
+  copyToClipboard(): void {
+    if (this.generatedPassword) {
+      navigator.clipboard.writeText(this.generatedPassword).then(() => {
+        console.log('Password copied to clipboard');
+      }).catch(err => {
+        console.error('Failed to copy password: ', err);
+      });
+    }
+  } 
 }

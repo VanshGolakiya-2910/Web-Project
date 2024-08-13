@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PasswordCheckerComponent } from './password-checker/password-checker.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
