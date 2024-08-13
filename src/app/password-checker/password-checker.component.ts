@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PasswordCheckerComponent {
   mode: string = 'basic'; // Default mode
-  password: string = '';
+  private _password: string = '';
   generatedPassword: string = ''; // To store the generated password
   personalDetails = {
     firstName: '',
@@ -19,6 +19,17 @@ export class PasswordCheckerComponent {
   strengthClass: string = 'progress-bar bg-warning';
   passwordVisible: boolean = false;
   feedback: string[] = []; // To store feedback messages
+
+  get password(): string {
+    return this._password;
+  }
+
+  set password(value: string) {
+    this._password = value;
+    if (this._password === '') {
+      this.resetProgressBar();
+    }
+  }
 
   setMode(mode: string): void {
     this.mode = mode;
@@ -108,15 +119,15 @@ export class PasswordCheckerComponent {
     } else if (length >= 8 && (hasUpperCase || hasLowerCase) && hasNumbers && hasSpecialChars) {
       this.strength = 'Strong';
       this.strengthScore = 70;
-      this.strengthClass = 'progress-bar.bg-primary';
+      this.strengthClass = 'progress-bar bg-primary';
     } else if (length >= 6 && (hasUpperCase || hasLowerCase) && hasNumbers) {
       this.strength = 'Medium';
       this.strengthScore = 50;
-      this.strengthClass = 'progress-bar.bg-info ';
+      this.strengthClass = 'progress-bar bg-info';
     } else if (length >= 6) {
       this.strength = 'Weak';
       this.strengthScore = 30;
-      this.strengthClass = 'progress-bar.bg-warning';
+      this.strengthClass = 'progress-bar bg-warning';
     } else {
       this.strength = 'Very Weak';
       this.strengthScore = 10;
@@ -223,7 +234,14 @@ export class PasswordCheckerComponent {
       this.strengthClass = 'progress-bar bg-success';
     }
   }
-  
+
+  resetProgressBar(): void {
+    this.strength = '';
+    this.strengthScore = 0;
+    this.strengthClass = 'progress-bar bg-warning';
+    this.feedback = [];
+  }
+
   copyToClipboard(): void {
     if (this.generatedPassword) {
       navigator.clipboard.writeText(this.generatedPassword).then(() => {
@@ -232,5 +250,5 @@ export class PasswordCheckerComponent {
         console.error('Failed to copy password: ', err);
       });
     }
-  } 
+  }
 }
