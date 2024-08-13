@@ -206,7 +206,22 @@ export class PasswordCheckerComponent {
   }
 
   updateStrengthMeter(): void {
-    // Optional: Update strength meter based on password strength score
+    if (this.strengthScore <= 10) {
+      this.strength = 'Very Weak';
+      this.strengthClass = 'progress-bar bg-danger';
+    } else if (this.strengthScore <= 30) {
+      this.strength = 'Weak';
+      this.strengthClass = 'progress-bar bg-warning';
+    } else if (this.strengthScore <= 50) {
+      this.strength = 'Medium';
+      this.strengthClass = 'progress-bar bg-info';
+    } else if (this.strengthScore <= 70) {
+      this.strength = 'Strong';
+      this.strengthClass = 'progress-bar bg-primary';
+    } else if (this.strengthScore <= 90) {
+      this.strength = 'Very Strong';
+      this.strengthClass = 'progress-bar bg-success';
+    }
   }
   
   copyToClipboard(): void {
